@@ -4,7 +4,7 @@ public class MyStack<T>
 
 	public MyStack()
 	{
-
+		
 	}
 
 	/**
