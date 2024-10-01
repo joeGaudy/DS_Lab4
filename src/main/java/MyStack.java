@@ -1,10 +1,21 @@
 
 public class MyStack<T>
 {
-
+	public class Node{
+		public T v;
+		public Node n;
+		
+		public Node(T val, Node next){
+			v = val;
+            n = next;
+		}
+	}
+	
+	private Node head;
+	
 	public MyStack()
 	{
-		
+		head = null;
 	}
 
 	/**
@@ -13,7 +24,12 @@ public class MyStack<T>
 	 */
 	public void push(T val)
 	{
-
+		if (head == null) {
+			head = new Node(val, null);
+		}
+		else {
+			head = new Node(val, head);
+		}
 	}
 
 	/**
@@ -22,7 +38,7 @@ public class MyStack<T>
 	 */
 	public T top()
 	{
-
+		
 		return null;
 	}
 
@@ -33,7 +49,12 @@ public class MyStack<T>
 	 */
 	public T pop()
 	{
-		return null;
+		if(head == null) {
+			throw new StackUnderFlowException();
+		}
+		Node temp = head;
+		head = temp.n;
+		return temp.v;
 	}
 
 	/**
