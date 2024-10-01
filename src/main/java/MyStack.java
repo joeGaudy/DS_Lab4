@@ -38,8 +38,10 @@ public class MyStack<T>
 	 */
 	public T top()
 	{
-		
-		return null;
+		if(head == null) {
+			throw new StackUnderFlowException();
+		}
+		return head.v;
 	}
 
 	/**
@@ -63,7 +65,7 @@ public class MyStack<T>
 	 */
 	public boolean isEmpty()
 	{
-		return true;
+		return head == null;
 	}
 
 }
